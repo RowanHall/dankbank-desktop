@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Google+Sans:100,300,400,500,700,900,100i,300i,400i,500i,700i,900i');
+body {
+  background:linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("./0.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+  background-size: cover;
+  height: 100vh;
+}
+* {
+  color: #fff;
+  font-family: 'Google Sans', sans-serif;
+  margin: 0px;
+  
+}
+#bottomslab {
+  --vheight: 350px;
+  position: absolute;
+  height: var(--vheight);
+  top: calc(100vh - var(--vheight));
+  left: 50px;
+}
+#signinfavicon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 40px;
+}
+h1 {
+  font-size: 40px;
+}
+button {
+  margin: 20px;
+  width: 500px;
+  font-size: 25px;
+  height: 50px;
+  background: linear-gradient(90deg, rgba(4,92,255,1) 50%, rgba(130,0,255,1) 100%);
+  border: 0px;
+  border-radius: 25px;
+}
+#subtext {
+  font-size: 12px;
+}
+#name {
+  font-size: 35px;
+  position: relative;
+  top:47px;
+  left: 55px;
+}
+#topBar {
+  --webkit-app-region: drag;
+}
