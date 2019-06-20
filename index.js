@@ -7,19 +7,19 @@ let win
 function createWindow () {
   win = new BrowserWindow({
     width: 1185,
-    height: 700,
+    height: 750,
     webPreferences: {
       nodeIntegration: true
     },
     minWidth: 1185,
-    minHeight: 600,
+    minHeight: 750,
     frame: false
   })
 
   if(account.isLoggedIn()) {
     win.loadFile(__dirname + "/src/frontend/home/index.html")
   } else {
-    win.loadFile(__dirname + "/src/frontend/login/index.html")
+    win.loadFile(__dirname + "/src/frontend/notauthed/index.html")
   }
 
   win.webContents.openDevTools()
