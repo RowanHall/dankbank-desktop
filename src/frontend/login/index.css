@@ -132,3 +132,53 @@ button:hover {
   bottom:calc(calc(60vh - 457px)/5);
   width: 100%;
 }
+
+#back {
+  -webkit-app-region: no-drag;
+  float: left;
+  background-color: rgba(0,0,0,0.2);
+  width:50px;
+  height: 50px;
+  margin-right: 10px;
+}
+#back:hover {
+  background-color: rgba(0,0,0,0.3);
+}
+.back {
+  position: absolute;
+  left: 9px;
+  top: 7.5px;
+  float:right;
+}
+.backinner {
+  color: #fff;
+  font-size: 32px;
+  position: relative;
+  left: -4px;
+  top:-5.1px;
+}
+.back:hover {
+  opacity: 1;
+}
+.back:before {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 3px;
+  border-radius: 100px;
+  background-color: #fff;
+}
+.back:before {
+  transform: rotate(90deg);
+}
+#error {
+  color: #CC0000;
+  font-style: italic;
+  font-size: 28px;
+  position: relative;
+  top: 25px;
+}
+#logindisabled {
+  filter: grayscale(1);
+}

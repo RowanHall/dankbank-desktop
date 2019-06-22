@@ -16,7 +16,7 @@ function createWindow () {
     frame: false
   })
 
-  if(account.isLoggedIn()) {
+  if(account.getuuid()) {
     win.loadFile(__dirname + "/src/frontend/home/index.html")
   } else {
     win.loadFile(__dirname + "/src/frontend/notauthed/index.html")
