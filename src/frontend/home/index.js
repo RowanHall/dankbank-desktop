@@ -101,7 +101,7 @@ var toggleinvestmodal = () => {
 
 var showUser = (e) => {
   console.log(e)
-  toggleinvestmodal();
+  toggleusermodal();
 }
 
 var showUserModal = () => {
@@ -119,7 +119,7 @@ var userModalShowing = () => {
   return (document.getElementById('usermodal').style.opacity == 1)
 }
 
-var toggleinvestmodal = () => {
+var toggleusermodal = () => {
   if(userModalShowing()) {
     hideUserModal()
   } else {

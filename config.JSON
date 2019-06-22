@@ -1,3 +1,1 @@
-{
-  "oAuthURL": "https://www.reddit.com/api/v1/authorize?client_id=s05eekpXEMDenA&response_type=code&state=${state}&redirect_uri=https://desktopapi.dankbank.io/&duration=permanent&scope=identity%20read%20submit%20vote"
-}
+{}
