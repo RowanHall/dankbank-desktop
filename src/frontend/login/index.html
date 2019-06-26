@@ -8,14 +8,17 @@
   <body>
     <div id="centerslab">
       <center id="topcenter">
-        <img id="signinfavicon" src="./dankbank_logo_signin.png"></img>
-        <h1 id="name">DankBank Desktop</h1>
+        
+        <h1 id="name"><img id="signinfavicon" src="./dankbank_logo_signin.png"></img>DankBank Desktop</h1>
       </center>
-      <h1>Username:</h1>
-      <input id="usr"></input>
-      <h1>Password:</h1>
-      <input id="pwd" type="password"></input>
-      <br>
+      <center class="label-group">
+        <label>Username:</label><br>
+        <input id="usr"></input>  
+      </center>
+      <center class="label-group">
+        <label>Password:</label><br>
+        <input id="pwd" type="password"></input>
+      </center>
       <center><pre id="error"></pre></center>
       <center class="floatbtm">
         <button id="login">Login</button>

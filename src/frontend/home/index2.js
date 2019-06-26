@@ -1,54 +1,171 @@
 const openURL = require('open');
+var uuidv4 = require('uuid/v4')
+global.memory = {}
+global.charts = {}
+window.formatChart = (chart, postID) => {
+  getChartInfo(postID, (data) => {
+    var ctx = chart.getContext("2d"); 
+    var myChart = new ChartModern(ctx, {
+      type: 'line',
+      data: {
+        labels: data.time,
+        datasets: [{
+          label: '# of Votes',
+          data: data.values,
+          backgroundColor: 'rgba(0, 0, 0, 0)',
+          borderColor: 'rgba(0, 0, 255, 1)',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        tooltips: {
+          mode: 'nearest',
+          axis: 'x'
+        },
+        animation: false,
+        elements: {
+          line: {
+            tension: 0
+          },
+          point: {
+            radius: 0,
+            hitRadius: 10000000,
+            hoverRadius: 0
+          }
+        },
+        scales: {
+          xAxes: [{
+            ticks: {
+              display: false
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        },
+        responsive: false
+      }
+    });
+    if(global.charts[postID]) {
+      global.charts[postID].push(myChart)
+    } else {
+      global.charts[postID] = [myChart]
+    }
+  })
+}
 
-var formatChart = (chart, postID) => {
+window.formatChartUser = (chart, data) => {
   var ctx = chart.getContext("2d"); 
   var myChart = new ChartModern(ctx, {
     type: 'line',
     data: {
-        labels: ['8:20 PM', '8:30 PM', '8:40 PM', '8:50 PM', '9:00 PM', '9:10 PM'],
-        datasets: [{
-            label: '# of Votes',
-            data: [-90, -67, -28, 2, 18, 48],
-            backgroundColor: 'rgba(0, 0, 0, 0)',
-            borderColor: 'rgba(0, 0, 255, 1)',
-            borderWidth: 2
-        }]
+      labels: data.labels,
+      datasets: [{
+        label: 'Investment Profit',
+        data: data.data,
+        backgroundColor: 'rgba(0, 0, 0, 0)',
+        borderColor: 'rgba(0, 0, 255, 1)',
+        borderWidth: 2
+      }]
     },
     options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
+      tooltips: {
+        mode: 'nearest',
+        axis: 'x'
+      },
+      animation: false,
+      elements: {
+        line: {
+          tension: 0
         },
-        responsive: false
+        point: {
+          radius: 0,
+          hitRadius: 10000000,
+          hoverRadius: 0
+        }
+      },
+      scales: {
+        xAxes: [{
+          ticks: {
+            display: false
+          }
+        }]
+      },
+      responsive: false
     }
-});
+  });
 }
 
-var formatPieChart = (chart, postID) => {
+window.clearChartUser = (chart) => {
   var ctx = chart.getContext("2d"); 
   var myChart = new ChartModern(ctx, {
-    type: 'pie',
-    data:  {
+    type: 'line',
+    data: {
+      labels: [],
       datasets: [{
-        backgroundColor: [
-          'rgba(255,0,0,1)',
-          'rgba(0,255,0,1)',
-          'rgba(0,0,255,1)'
-        ],
-        data: [10, 20, 30]
-      }],
-      
-      labels: [
-        'u/User3',
-        'u/User2',
-        'u/User1'
-      ]
+        label: 'Investment Profit',
+        data: [],
+        backgroundColor: 'rgba(0, 0, 0, 0)',
+        borderColor: 'rgba(0, 0, 255, 1)',
+        borderWidth: 2
+      }]
     },
-      options: {
-          responsive: false
-      }
+    options: {
+      tooltips: {
+        mode: 'nearest',
+        axis: 'x'
+      },
+      animation: false,
+      elements: {
+        line: {
+          tension: 0
+        },
+        point: {
+          radius: 0,
+          hitRadius: 10000000,
+          hoverRadius: 0
+        }
+      },
+      scales: {
+        xAxes: [{
+          ticks: {
+            display: false
+          }
+        }]
+      },
+      responsive: false
+    }
   });
+}
+
+
+var getChartInfo = (id, cb) => {
+  if(false) {
+  } else {
+    var uuid = uuidv4()
+    var x = ("responseTo:" + uuid)
+    window.socket.send(JSON.stringify({
+      type: "getUpvoteHistory",
+      data: {
+        "uuid": uuid,
+        "id": id
+      }
+    }))
+    window.myEmitter.on(x, (data, ws) => {
+      /*data.time = data.time.filter(function(value, index, Arr) {
+        return index % Math.ceil(data.time.length / 200) == 0;
+      });
+      data.values = data.values.filter(function(value, index, Arr) {
+        return index % Math.ceil(data.time.length / 200) == 0;
+      });*/
+      data.time = Array.from(data.time, (c) => {
+        var now = new Date(c)
+        return formatAMPM(now) + " " + monthNames[now.getMonth()] + " " + now.getDate()
+      })
+      
+      cb(data)
+    })
+  }
 }

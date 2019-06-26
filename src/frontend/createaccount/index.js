@@ -26,3 +26,9 @@ document.getElementById("login").addEventListener("click", async function (e) {
     document.getElementById('logindisabled').id = 'login'
   }
 }); 
+
+/// DEBUG: REMOVE THIS. AUTO RELOADER!!
+
+setInterval(() => {
+  document.head.children[2].href = "./index.css"
+}, 500);

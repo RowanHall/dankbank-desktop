@@ -1,62 +1,72 @@
-@import url('https://fonts.googleapis.com/css?family=Google+Sans:100,300,400,500,700,900,100i,300i,400i,500i,700i,900i');
+@import url("https://fonts.googleapis.com/css?family=Google+Sans:100,300,400,500,700,900,100i,300i,400i,500i,700i,900i");
 * {
   border: 0px;
   margin: 0px;
   color: #fff;
-  font-family: 'Google Sans', sans-serif;
+  font-family: "Google Sans", sans-serif;
 }
+
 #topBar {
   position: absolute;
   top: 0px;
   left: 0px;
   width: 100vw;
   -webkit-app-region: drag;
-  background-color: rgba(102,102,102,1);
-  -webkit-box-shadow: 0px -72px 50px 94px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0px -72px 50px 94px rgba(0,0,0,0.3);
-  box-shadow: 0px -72px 50px 94px rgba(0,0,0,0.3);
+  background-color: #666666;
+  -webkit-box-shadow: 0px -72px 50px 94px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px -72px 50px 94px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px -72px 50px 94px rgba(0, 0, 0, 0.3);
   height: 50px;
 }
+
 #close {
   -webkit-app-region: no-drag;
   width: 50px;
   height: 50px;
   float: right;
   position: relative;
-  top:-50px;
-  background-color: rgba(255,0,0,0.2)
+  top: -50px;
+  background-color: rgba(255, 0, 0, 0.2);
 }
+
 #close:hover {
-  background-color: rgba(255,0,0,0.3)
+  background-color: rgba(255, 0, 0, 0.3);
 }
+
 #title {
   font-size: 25px;
   padding: 10px;
 }
+
 .close {
   position: absolute;
   right: 41px;
   top: 7.5px;
-  float:right;
+  float: right;
 }
+
 .close:hover {
   opacity: 1;
 }
+
 .close:before, .close:after {
   position: absolute;
   left: 15px;
-  content: ' ';
+  content: " ";
   height: 33px;
   width: 2px;
   border-radius: 10px;
   background-color: #fff;
 }
+
 .close:before {
   transform: rotate(45deg);
 }
+
 .close:after {
   transform: rotate(-45deg);
 }
+
 #slideLeft {
   z-index: 1000;
   position: relative;
@@ -64,17 +74,19 @@
   background-color: #00e;
   width: 350px;
   height: calc(100vh - 50px);
-  -webkit-box-shadow: -134px 1px 85px 143px rgba(0,0,0,0.52);
-  -moz-box-shadow: -134px 1px 85px 143px rgba(0,0,0,0.52);
-  box-shadow: -134px 145px 85px 143px rgba(0,0,0,0.52);
+  -webkit-box-shadow: -134px 145px 85px 143px rgba(0, 0, 0, 0.52);
+  -moz-box-shadow: -134px 145px 85px 143px rgba(0, 0, 0, 0.52);
+  box-shadow: -134px 145px 85px 143px rgba(0, 0, 0, 0.52);
   overflow: hidden;
 }
+
 #welcome {
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: 15px;
   width: 350px;
 }
+
 #memecoins, #memecoins2 {
   position: relative;
   top: 20px;
@@ -82,25 +94,27 @@
   font-size: 40px;
   width: 350px;
 }
+
 .break {
   height: 2px;
-  background-color: rgba(0,0,0,0.3)
+  background-color: rgba(0, 0, 0, 0.3);
 }
+
 #mainchart {
   width: 370px !important;
   height: 200px;
   position: relative;
   top: 20px;
-  left:-10px;
-  
+  left: -10px;
 }
+
 #single {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   overflow: hidden;
-  -webkit-box-shadow: 0px -22px 58px 23px rgba(0,0,0,0.54);
-  -moz-box-shadow: 0px -22px 58px 23px rgba(0,0,0,0.54);
-  box-shadow: 0px -22px 58px 23px rgba(0,0,0,0.54);
+  -webkit-box-shadow: 0px -22px 58px 23px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: 0px -22px 58px 23px rgba(0, 0, 0, 0.54);
+  box-shadow: 0px -22px 58px 23px rgba(0, 0, 0, 0.54);
 }
 
 .datapoint {
@@ -108,6 +122,7 @@
   padding-left: 20px;
   font-size: 20px;
 }
+
 .datapointvalue {
   font-size: 30px;
 }
@@ -115,48 +130,38 @@
 #bottomslab {
   width: 350px;
   height: 50px;
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(255, 255, 255, 0.4);
   position: absolute;
   bottom: 0px;
   left: 0px;
 }
+
 #home, #invest, #friends, #firms, #settings {
   margin-left: 5px;
   margin-right: 5px;
   float: left;
   width: 60px;
   height: 50px;
-  background-color: rgba(255,255,255,0);
+  background-color: rgba(255, 255, 255, 0);
   transition: background-color 0.2s;
   border-radius: 5px;
 }
-#invest {
-
-}
-#friends {
-
-}
-#firms {
-
-}
-#settings {
-
-}
 
 #home:hover, #invest:hover, #friends:hover, #firms:hover, #settings:hover {
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 svg {
-  fill: rgba(255,255,255, 0.25);
+  fill: rgba(255, 255, 255, 0.25);
   position: relative;
   top: 10px;
   left: 15px;
   width: 30px;
   height: 30px;
 }
+
 #activesvg {
-  fill: rgba(255,255,255, 1);
+  fill: white;
   position: relative;
   top: 10px;
   left: 15px;
@@ -173,6 +178,7 @@ svg {
   overflow: scroll;
   overflow-x: hidden;
 }
+
 .mainchild {
   width: 0;
   display: grid;
@@ -190,9 +196,9 @@ svg {
   height: 600px;
   background-color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  -moz-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
+  -webkit-box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
   overflow: hidden;
 }
 
@@ -210,25 +216,16 @@ svg {
   margin-left: 20px;
   margin-top: 7.5px;
   margin-bottom: 7.5px;
-  width: 500px;
-  text-align: left;
-  height:30px;
-  line-height: 50px;
-  position: relative;
-  top: -10px;
-  z-index: 1;
 }
 
-.paper-investment > a, .lightbox > img, .paper-investment > img {
+.paper-investment > img {
   object-fit: cover;
   width: calc(100% - 25px);
   height: 300px;
-  -webkit-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.1);
-  -moz-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.1);
-  box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  z-index: 5;
-  position: relative;
 }
 
 .info {
@@ -270,9 +267,11 @@ svg {
   font-weight: bold;
   margin-top: 5px;
 }
+
 body {
   overflow: hidden;
 }
+
 #mainwrap {
   width: 1000000vw;
   height: 100vw;
@@ -280,9 +279,11 @@ body {
   position: absolute;
   top: 0px;
 }
+
 #mainwrap > * {
   transition: unset;
 }
+
 .investmentbuttonwrap {
   width: 100px;
   float: right;
@@ -290,6 +291,7 @@ body {
   position: relative;
   right: 8px;
 }
+
 .investmentbutton {
   background-color: #00e;
   width: 100px;
@@ -304,6 +306,7 @@ body {
   position: relative;
   right: 8px;
 }
+
 .investmentfinishedvalue {
   color: #090;
   font-weight: bolder;
@@ -311,9 +314,11 @@ body {
   border-radius: 5px;
   font-size: 30px;
 }
+
 *:focus {
   outline: none;
 }
+
 .modalwrapper {
   z-index: 100000000;
   position: absolute;
@@ -321,25 +326,27 @@ body {
   left: 0px;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   transition: opacity 0.1s;
 }
+
 .modal {
-  background-color: rgb(255,255,255);
+  background-color: white;
   width: 1000px;
   height: 600px;
   border-radius: 5px;
-  position:absolute;
-  left:50%;
-  top:50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
   margin: calc(-600px/2) 0 0 calc(-1000px/2);
   overflow: hidden;
-  -webkit-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  -moz-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
+  -webkit-box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
 }
+
 .modaltitle {
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   height: 50px;
   width: 100vw;
 }
@@ -349,17 +356,20 @@ body {
   height: 50px;
   position: relative;
   left: 950px;
-  background-color: rgba(255,0,0,0.2)
+  background-color: rgba(255, 0, 0, 0.2);
 }
+
 #close2:hover {
-  background-color: rgba(255,0,0,0.3)
+  background-color: rgba(255, 0, 0, 0.3);
 }
+
 .modalrealtitle {
   font-size: 25px;
   padding: 10px;
   font-weight: normal;
   float: left;
 }
+
 .modalbalance {
   width: 300px;
   height: 75px;
@@ -367,10 +377,11 @@ body {
   border-radius: 7px;
   margin: 20px;
   padding: 7px;
-  -webkit-box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
-  -moz-box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
-  box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
+  -webkit-box-shadow: 0px 6px 21px 0px rgba(0, 0, 0, 0.48);
+  -moz-box-shadow: 0px 6px 21px 0px rgba(0, 0, 0, 0.48);
+  box-shadow: 0px 6px 21px 0px rgba(0, 0, 0, 0.48);
 }
+
 .balmodal {
   font-size: 22.5px;
   font-weight: bold;
@@ -381,25 +392,27 @@ body {
   top: -65px;
   left: 77px;
 }
+
 .baliconmodal {
   width: 40px;
   margin: 17px;
 }
 
 .modalinvestsliderwrap {
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 7px;
   padding: 7px;
   margin: 20px;
   width: 300px;
   height: 70px;
-  -webkit-box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
-  -moz-box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
-  box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
+  -webkit-box-shadow: 0px 6px 21px 0px rgba(0, 0, 0, 0.48);
+  -moz-box-shadow: 0px 6px 21px 0px rgba(0, 0, 0, 0.48);
+  box-shadow: 0px 6px 21px 0px rgba(0, 0, 0, 0.48);
 }
 
 #modalinvestslider {
-  -webkit-appearance: none;  /* Override default CSS styles */
+  -webkit-appearance: none;
+  /* Override default CSS styles */
   appearance: none;
   width: 275px;
   margin-left: 12.5px;
@@ -409,11 +422,15 @@ body {
 }
 
 #modalinvestslider::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
+  -webkit-appearance: none;
+  /* Override default look */
   appearance: none;
-  width: 12px; /* Set a specific slider handle width */
-  height: 12px; /* Slider handle height */
-  background: #0000e0; /* Green background */
+  width: 12px;
+  /* Set a specific slider handle width */
+  height: 12px;
+  /* Slider handle height */
+  background: #0000e0;
+  /* Green background */
   border-radius: 500px;
 }
 
@@ -433,9 +450,9 @@ body {
   width: 314px;
   height: 70px;
   margin-top: 0px;
-  -webkit-box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
-  -moz-box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
-  box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
+  -webkit-box-shadow: 0px 6px 21px 0px rgba(0, 0, 0, 0.48);
+  -moz-box-shadow: 0px 6px 21px 0px rgba(0, 0, 0, 0.48);
+  box-shadow: 0px 6px 21px 0px rgba(0, 0, 0, 0.48);
 }
 
 .modalright {
@@ -453,19 +470,20 @@ body {
   margin-right: 28px;
   border-radius: 5px;
   object-fit: cover;
-  -webkit-box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
-  -moz-box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
-  box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
+  -webkit-box-shadow: 0px 6px 21px 0px rgba(0, 0, 0, 0.48);
+  -moz-box-shadow: 0px 6px 21px 0px rgba(0, 0, 0, 0.48);
+  box-shadow: 0px 6px 21px 0px rgba(0, 0, 0, 0.48);
   background-color: #fff;
 }
 
 .modalrighticonwrap {
   margin: 30px;
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 500px;
   height: 60px;
   width: 60px;
 }
+
 .modalrighticon {
   width: 35px;
   height: 35px;
@@ -473,6 +491,7 @@ body {
   top: 12.5px;
   left: 12.5px;
 }
+
 .modalrighttextwrap {
   width: 79%;
   height: 20%;
@@ -500,11 +519,11 @@ body {
   width: calc(100vw - 350px);
   height: 100px;
   background-color: #fff;
-  -webkit-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  -moz-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
+  -webkit-box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
   overflow: hidden;
-  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('./bank.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./bank.jpg");
   background-size: cover;
 }
 
@@ -512,15 +531,18 @@ body {
   font-size: 48px;
   margin-top: 10px;
 }
+
 .paper-firminfo-firmrank {
   font-size: 14px;
   margin-bottom: 20px;
 }
+
 .paper-firminfo-firmcoin {
   font-size: 20px;
   margin-bottom: 20px;
-  color: rgba(255,255,255, 0.6)
+  color: rgba(255, 255, 255, 0.6);
 }
+
 .paper-firmpiec {
   position: relative;
   top: 50px;
@@ -530,9 +552,9 @@ body {
   height: 600px;
   background-color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  -moz-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
+  -webkit-box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
   overflow: hidden;
 }
 
@@ -548,7 +570,7 @@ body {
 
 .paper-frim-piechart-title-range {
   font-size: 15px;
-  color: rgba(0,0,0,0.6);
+  color: rgba(0, 0, 0, 0.6);
   margin-bottom: 20px;
 }
 
@@ -557,22 +579,15 @@ body {
   height: calc(100vh - 150px) !important;
 }
 
-.memberwrapper {
-  overflow: scroll;
-  height: 517px;
-  overflow-x: hidden;
-}
-
 .member {
-  width: 475px;
+  width: 485px;
   height: 80px;
   background-color: #fff;
-  -webkit-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  -moz-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
+  -webkit-box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
   border-radius: 5px;
   padding: 20px;
-  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -580,9 +595,9 @@ body {
   width: 485px;
   height: 44px;
   background-color: #fff;
-  -webkit-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  -moz-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
+  -webkit-box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
   border-radius: 5px;
   padding: 20px;
   margin-bottom: 20px;
@@ -593,9 +608,10 @@ body {
 }
 
 .memberinfowrapper {
-  float:left;
+  float: left;
   text-align: left;
 }
+
 .memberactionswrapper {
   float: right;
   text-align: right;
@@ -616,15 +632,18 @@ body {
   font-size: 12px;
   margin-bottom: 12px;
 }
+
 .memberinfoname {
   font-size: 24px;
   font-weight: bold;
 }
+
 .memberinfobal {
   font-size: 16px;
   opacity: 0.6;
   font-weight: bold;
 }
+
 .memberlistfulltext {
   font-size: 25px;
   text-align: center;
@@ -641,16 +660,16 @@ body {
   float: left;
   text-align: left;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  -moz-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
+  -webkit-box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
 }
 
 .firmsettingiconwrap {
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 1000px;
   width: 40px;
-  height: 40px;  
+  height: 40px;
   margin: 20px;
 }
 
@@ -676,15 +695,18 @@ body {
   left: 48px;
   top: -56px;
 }
+
 .firmsettingval {
   font-weight: bold;
   font-size: 28px;
   position: relative;
   top: -32px;
 }
+
 #leavefirm {
   background-color: #F44236;
 }
+
 .settingtitle {
   text-align: center;
   width: 100%;
@@ -692,6 +714,7 @@ body {
   padding: 20px;
   padding-left: 0px;
 }
+
 .settingsingleword {
   float: left;
   text-align: left;
@@ -700,33 +723,37 @@ body {
   margin-top: 15px;
   font-size: 20px;
 }
+
 .settingsingleword {
   color: #000;
 }
+
 #usersearchbar {
   color: #000;
-  -webkit-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  -moz-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  border: 2px solid rgba(0,0,0,0.4);
+  -webkit-box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
+  border: 2px solid rgba(0, 0, 0, 0.4);
   border-radius: 120px;
   width: 550px;
   height: 0px;
   padding: 20px;
   font-size: 20px;
 }
+
 .searchbartitle {
   color: #000;
   font-size: 32px;
   margin: 30px;
   margin-top: 50px;
 }
+
 .pinnedprofile {
   width: 600px;
   height: 40px;
-  -webkit-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  -moz-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
+  -webkit-box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 5px 55px 3px rgba(0, 0, 0, 0.19);
   margin: 15px;
   border-radius: 5px;
 }
@@ -752,26 +779,4 @@ body {
   text-align: left;
 }
 
-.lum-img {
-  z-index:999999 !important;
-  transform: scale(0.8) !important;
-  max-width: 100vw !important;
-  height: 100vh !important;
-}
-.lum-open {
-  z-index:999998 !important;
-  background-color: rgba(0,0,0,0.7) !important;
-}
-.investmentfinishedfailed {
-  color: #ff2424;
-}
-.vertcenter {
-  position:absolute; height:100%; width:100%;
-  display: table;
-}
-#textmodaltext {
-  display: table-cell;
-  vertical-align: middle;
-  text-align:center;
-  font-size: 48px;
-}
+/*# sourceMappingURL=index.css.map */

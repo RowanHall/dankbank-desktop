@@ -7,22 +7,24 @@
     <script src="./Chart.js" charset="utf-8"></script>
     <script src="./ChartModern.js" charset="utf-8"></script>
     <script src="./index2.js" charset="utf-8"></script>
+    <script src="./Luminous.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
   </head>
   <body>
     <div id="slideLeft">
       <div id="single">
-        <center><pre id="welcome">Welcome back, <b id="welcomeName">SoLoDas</b></pre></center>
+        <center><pre id="welcome">Welcome back, <b id="welcomeName">...</b></pre></center>
         <div class="break"></div>
-        <center><b id="memecoins">1,000,000,000</b><br><i style="position: relative;top: 20px;">M¢ in bank<br>100,000,000,000 M¢ (invested)</i></center>
+        <center><b id="memecoins">...</b><br><i style="position: relative;top: 20px;">M¢ in bank<br><pre id="memecoinsinvested">...</pre> M¢ (invested)</i></center>
         <canvas id="mainchart" width="350" height="200" style="position: relative;top: 20px;"></canvas>
       </div>
       <div id="info">
-        <pre class="datapoint">Rank: <b class="datapointvalue" id="rank">74,986</b></pre>
-        <pre class="datapoint">Gone Broke: <b class="datapointvalue" id="broke">0</b> times</pre>
-        <pre class="datapoint">Completed <b class="datapointvalue" id="compInvestments">27</b> investments</pre>
-        <pre class="datapoint">Firm: <b class="datapointvalue" id="firm">Some Firm Name</b></pre>
-        <pre class="datapoint">Firm Rank: <b class="datapointvalue" id="firmrank">Floor Trader</b></pre>
-        <pre class="datapoint">Firm Placement: <b class="datapointvalue" id="firmplacement">4th</b></pre>
+        <pre class="datapoint">Rank: <b class="datapointvalue" id="rank">...</b></pre>
+        <pre class="datapoint">Gone Broke: <b class="datapointvalue" id="broke">...</b> times</pre>
+        <pre class="datapoint">Completed <b class="datapointvalue" id="compInvestments">...</b> investments</pre>
+        <pre class="datapoint">Firm: <b class="datapointvalue" id="firm">...</b></pre>
+        <pre class="datapoint">Firm Rank: <b class="datapointvalue" id="firmrank">...</b></pre>
+        <pre class="datapoint">Firm Placement: <b class="datapointvalue" id="firmplacement">...</b></pre>
       </div>
       <div id="bottomslab">
         <div id="home" onclick="switchtotab(0)">
@@ -58,149 +60,17 @@
     <div id="mainwrap" style="left: calc(-1 * calc(calc(1 * var(--screen)) - 350px));--screen: 100;">
       <center class="main">
         <div class="mainchild">
-          <div class="paper-investment">
-            <h1>Invest now before your teacher notices you!</h1>
-            <img src='https://i.redd.it/x5fnlxycei531.jpg'></img>
-            <div class="info">
-              <div class="investmentinfo">
-                <pre class="inventmentinfo1">Invested [TEST] M¢ at [TEST] upvotes</pre>
-                <pre class="inventmentinfo2">$ [TEST]% ([TEST] M¢)</pre>
-              </div>
-              <div class="investmentinfotime">
-                <pre class="investmenttime">00:00<img style="width: 20px;height: 20px;position: relative;top: 9px;margin: 5px;" src="./clock.svg"></img></pre>
-              </div>
-              <canvas class="upvotechart" width="520px" height="180px"></canvas>
-              <script>
-                formatChart(document.currentScript.parentElement.children[2], 'postid')
-              </script>
-            </div>
-          </div>
-          <div class="paper-investment">
-            <h1>Invest for substantial financial increase!</h1>
-            <img src='https://i.redd.it/j32ajd2yae531.jpg'></img>
-            <div class="info">
-              <div class="investmentinfo">
-                <pre class="inventmentinfo1">Invested [TEST] M¢ at [TEST] upvotes</pre>
-                <pre class="inventmentinfo2">$ [TEST]% ([TEST] M¢)</pre>
-              </div>
-              <div class="investmentinfotime">
-                <pre class="investmenttime">00:00<img style="width: 20px;height: 20px;position: relative;top: 9px;margin: 5px;" src="./clock.svg"></img></pre>
-              </div>
-              <canvas class="upvotechart" width="520px" height="180px"></canvas>
-              <script>
-                formatChart(document.currentScript.parentElement.children[2], 'postid')
-              </script>
-            </div>
-          </div>
-          <div class="paper-investment">
-            <h1>Gotta invest before it's too late</h1>
-            <img src='https://i.redd.it/3kwwgo3ohb531.jpg'></img>
-            <div class="info">
-              <div class="investmentinfo">
-                <pre class="inventmentinfo1">Invested [TEST] M¢ at [TEST] upvotes</pre>
-                <pre class="inventmentinfo2">$ [TEST]% ([TEST] M¢)</pre>
-              </div>
-              <div class="investmentinfotime">
-                <pre class="investmenttime">00:00<img style="width: 20px;height: 20px;position: relative;top: 9px;margin: 5px;" src="./clock.svg"></img></pre>
-              </div>
-              <canvas class="upvotechart" width="520px" height="180px"></canvas>
-              <script>
-                formatChart(document.currentScript.parentElement.children[2], 'postid')
-              </script>
-            </div>
-          </div>
-          <div class="paper-investment investment-finished">
-            <h1>Invest in Peace while you still can</h1>
-            <img src='https://i.redd.it/zclq7ahaxi531.jpg'></img>
-            <div class="info">
-              <div class="investmentinfo">
-                <pre class="inventmentinfo2">Ended with 31 (+16) upvotes.</pre>
-                <pre class="inventmentinfo1">12 hours ago</pre>
-              </div>
-              <div class="investmentfinishedvaluewrap">
-                <pre class="investmentfinishedvalue">+220.0 M¢</pre>
-              </div>
-              <script>
-                formatChart(document.currentScript.parentElement.children[2], 'postid')
-              </script>
-            </div>
-          </div>
-          <div class="paper-investment investment-finished">
-            <h1>Invest in Peace while you still can</h1>
-            <img src='https://i.redd.it/zclq7ahaxi531.jpg'></img>
-            <div class="info">
-              <div class="investmentinfo">
-                <pre class="inventmentinfo2">Ended with 31 (+16) upvotes.</pre>
-                <pre class="inventmentinfo1">12 hours ago</pre>
-              </div>
-              <div class="investmentfinishedvaluewrap">
-                <pre class="investmentfinishedvalue">+220.0 M¢</pre>
-              </div>
-              <script>
-                formatChart(document.currentScript.parentElement.children[2], 'postid')
-              </script>
-            </div>
-          </div>
-          <div class="paper-investment investment-finished">
-            <h1>Invest in Peace while you still can</h1>
-            <img src='https://i.redd.it/zclq7ahaxi531.jpg'></img>
-            <div class="info">
-              <div class="investmentinfo">
-                <pre class="inventmentinfo2">Ended with 31 (+16) upvotes.</pre>
-                <pre class="inventmentinfo1">12 hours ago</pre>
-              </div>
-              <div class="investmentfinishedvaluewrap">
-                <pre class="investmentfinishedvalue">+220.0 M¢</pre>
-              </div>
-              <script>
-                formatChart(document.currentScript.parentElement.children[2], 'postid')
-              </script>
-            </div>
-          </div>
-          <div class="paper-investment investment-finished">
-            <h1>Invest in Peace while you still can</h1>
-            <img src='https://i.redd.it/zclq7ahaxi531.jpg'></img>
-            <div class="info">
-              <div class="investmentinfo">
-                <pre class="inventmentinfo2">Ended with 31 (+16) upvotes.</pre>
-                <pre class="inventmentinfo1">12 hours ago</pre>
-              </div>
-              <div class="investmentfinishedvaluewrap">
-                <pre class="investmentfinishedvalue">+220.0 M¢</pre>
-              </div>
-              <script>
-                formatChart(document.currentScript.parentElement.children[2], 'postid')
-              </script>
-            </div>
-          </div>
         </div>
       </center>
       <center class="main" style="position: relative; left: 100vw;">
         <div class="mainchild">
-          <div class="paper-investment">
-            <h1>2Invest now before your teacher notices you!</h1>
-            <img src='https://i.redd.it/x5fnlxycei531.jpg'></img>
-            <div class="info">
-              <div class="investmentinfo">
-                <pre class="inventmentinfo1">[TEST] Upvotes to break even, 1.20x Max profit.</pre> 
-                <pre class="inventmentinfo2">[TEST] Upvotes.</pre>
-              </div>
-              <div class="investmentbuttonwrap">
-                <button class="investmentbutton" onclick="invest('id')">Invest</button>
-              </div>
-              <canvas class="upvotechart" width="520px" height="180px"></canvas>
-              <script>
-                formatChart(document.currentScript.parentElement.children[2], 'postid')
-              </script>
-            </div>
-          </div>
         </div>
       </center>
       <center class="main" style="position: relative; left: calc(200vw - 350px); top: calc(-100vh + 100px);">
           <div class="usersearch">
             <pre class="searchbartitle">View a user's profile</pre>
             <input id="usersearchbar"></input>
-            <pre class="searchbartitle">Pinned Profiles</pre>
+            <!--<pre class="searchbartitle">Pinned Profiles</pre>
             <div class="pinnedprofile">
               <img src="./lock.svg"></img>
               <pre class="pinnedprofilename"><pre>u/<b class="pinnedprofilename2">beefjerkyrules</b></pre></pre>
@@ -208,70 +78,21 @@
             <div class="pinnedprofile">
               <img src="./lock.svg"></img>
               <pre class="pinnedprofilename"><pre>u/<b class="pinnedprofilename2">trevorjthompson</b></pre></pre>
-            </div>
+            </div>-->
           </div>
       </center>
       <div class="firminfo" style="position: relative; left: calc(300vw - 700px); top: calc(-200vh + 150px);">
-        <h1 class="paper-firminfo-firmname">Illuminati</h1>
-        <h1 class="paper-firminfo-firmcoin">12th Place • F¢ 1,128,142,027,012.00</h1>
+        <h1 class="paper-firminfo-firmname">...</h1>
+        <h1 class="paper-firminfo-firmcoin">...</h1>
       </div>
       <center class="main frimmain" style="position: relative; left: calc(200vw - 350px); top: calc(-200vh + 250px) !important;">
         <div class="mainchild">
           <div class="paper-investment">
             <div class="paper-firm-piechart-title">
-              <pre class="paper-frim-piechart-title-text">Firm revenue this week</pre>
-              <pre class="paper-frim-piechart-title-range">From 06/21/2019 to 06/28/2019</pre> 
-            </div>
-            <canvas class="paper-firm-picehart" width="550px" height="500px"></canvas>
-            <script>
-              formatPieChart(document.currentScript.parentElement.children[1], 'postid')
-            </script>
-          </div>
-          <div class="paper-investment">
-            <div class="paper-firm-piechart-title">
               <pre class="paper-frim-piechart-title-text">Members</pre>
-              <pre class="paper-frim-piechart-title-range">Sorted by rank</pre> 
+              <pre class="paper-frim-piechart-title-range">Sorted by balance</pre> 
             </div>
             <div class="memberwrapper">
-              <div class="member">
-                <div class="memberinfowrapper">
-                  <pre class="memberinforank">CEO</pre>
-                  <pre class="memberinfoname">ThoughtStrangler</pre>
-                  <pre class="memberinfobal">M¢ 13,627,493,931.00</pre>
-                </div>
-                <div class="memberactionswrapper">
-                  <img class="memberactionicon" src="./kickuser.svg"> 
-                  <img class="memberactionicon" src="./demoteuser.svg">
-                  <img class="memberactionicon" src="./promoteuser.svg">
-                </div>
-              </div> 
-              <div class="member">
-                <div class="memberinfowrapper">
-                  <pre class="memberinforank">CFO</pre>
-                  <pre class="memberinfoname">ThoughtLender</pre>
-                  <pre class="memberinfobal">M¢ 384,394,153,011.00</pre>
-                </div>
-                <div class="memberactionswrapper">
-                  <img class="memberactionicon" src="./kickuser.svg"> 
-                  <img class="memberactionicon" src="./demoteuser.svg">
-                  <img class="memberactionicon" src="./promoteuser.svg">
-                </div>
-              </div> 
-              <div class="member">
-                <div class="memberinfowrapper">
-                  <pre class="memberinforank">Floor Trader</pre>
-                  <pre class="memberinfoname">YourHomieIsProBro</pre>
-                  <pre class="memberinfobal">M¢ 11,216,353,944</pre>
-                </div>
-                <div class="memberactionswrapper">
-                  <img class="memberactionicon" src="./kickuser.svg"> 
-                  <img class="memberactionicon" src="./demoteuser.svg">
-                  <img class="memberactionicon" src="./promoteuser.svg">
-                </div>
-              </div> 
-              <div class="memberlistfull">
-                <pre class="memberlistfulltext">Click here to list all members</pre>
-              </div>
             </div> 
           </div>
           <div class="paper-investment">
@@ -284,7 +105,7 @@
               </div>
               <div class="firmsettingtextwrap">
                 <pre class="firmsettingtext">Next payout</pre>
-                <pre class="firmsettingval">M¢ 36b</pre>
+                <pre class="firmsettingval">M¢ ...</pre>
               </div>
             </div>
             <div class="firmsetting">
@@ -293,7 +114,7 @@
               </div>
               <div class="firmsettingtextwrap">
                 <pre class="firmsettingtext">Members</pre>
-                <pre class="firmsettingval">5 members</pre>
+                <pre class="firmsettingval">... members</pre>
               </div>
             </div>
             <div class="firmsetting">
@@ -302,7 +123,7 @@
               </div>
               <div class="firmsettingtextwrap">
                 <pre class="firmsettingtext">Tax</pre>
-                <pre class="firmsettingval">5%</pre>
+                <pre class="firmsettingval">...%</pre>
               </div>
             </div>
             <div class="firmsetting">
@@ -311,7 +132,7 @@
               </div>
               <div class="firmsettingtextwrap">
                 <pre class="firmsettingtext">Visibility</pre>
-                <pre class="firmsettingval">Public</pre>
+                <pre class="firmsettingval">...</pre>
               </div>
             </div>
             <div class="firmsetting">
@@ -320,7 +141,7 @@
               </div>
               <div class="firmsettingtextwrap">
                 <pre class="firmsettingtext">Level</pre>
-                <pre class="firmsettingval">1</pre>
+                <pre class="firmsettingval">...</pre>
               </div>
             </div>
             <div class="firmsetting" id="leavefirm">
@@ -368,14 +189,11 @@
             <pre class="balmodal">0.00 M¢</pre>
           </div>
           <canvas class="upvotechart" width="350px" height="207px"></canvas>
-          <script>
-            formatChart(document.currentScript.parentElement.children[1], 'postid')
-          </script>
           <div class="modalinvestsliderwrap">
-            <pre id="modalinvestslidertext">Invest amount: 100%</pre>
-            <input type="range" min="1" max="100" value="50" id="modalinvestslider">
+            <pre id="modalinvestslidertext">Invest amount: 0%</pre>
+            <input type="range" min="1" max="100" value="0" id="modalinvestslider">
           </div>
-          <button class="modalinvestbutton">Invest 0.00 M¢</button>
+          <button class="modalinvestbutton" style="opacity: 0.3;">Invest 0.00 M¢</button>
         </div>
         <div class="modalright">
           <img class="modalrightpreview" src="https://i.redd.it/x5fnlxycei531.jpg"></img>
@@ -429,12 +247,17 @@
             <pre class="balmodal">SomeFirmName</pre>
           </div>
           <canvas class="upvotechart" width="350px" height="300px"></canvas>
-          <script>
-            formatChart(document.currentScript.parentElement.children[2], 'postid')
-          </script>
         </div>
         <div class="modalright" style="position: relative; top: -518px;">
-          <img class="modalrightpreview" src="https://www.redditstatic.com/avatars/avatar_default_12_FF585B.png"></img>
+          <div class="modalrightpreview">
+            <div class="modalrighticonwrap">
+              <img class="modalrighticon" src="./level.svg"></img>
+            </div>
+            <div class="modalrighttextwrap">
+              <pre class="modalrighttext">Firm Rank</pre>
+              <pre class="modalrightval">Floor Trader</pre>
+            </div>
+          </div>
           <div class="modalrightpreview">
             <div class="modalrighticonwrap">
               <img class="modalrighticon" src="./maxprofit.svg"></img>
@@ -465,6 +288,12 @@
         </div>
       </div>
     </div>
+    <div class="modalwrapper" id="loadingmodal" style="opacity: 0;z-index: -100;"><center>
+      
+    </center></div>
+    <div class="modalwrapper" id="textmodal" style="opacity: 0;z-index: -100;"><center>
+      <div class="vertcenter"><pre id="textmodaltext"></pre></div>
+    </center></div>
     <script src="./index.js" charset="utf-8"></script>
   </body>
 </html>

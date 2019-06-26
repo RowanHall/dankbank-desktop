@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Google+Sans:100,300,400,500,700,900,100i,300i,400i,500i,700i,900i');
+@mixin box-shadow($prop) {
+  -webkit-box-shadow: $prop;
+  -moz-box-shadow: $prop;
+  box-shadow: $prop;
+}
+
 * {
   border: 0px;
   margin: 0px;
@@ -12,9 +18,7 @@
   width: 100vw;
   -webkit-app-region: drag;
   background-color: rgba(102,102,102,1);
-  -webkit-box-shadow: 0px -72px 50px 94px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0px -72px 50px 94px rgba(0,0,0,0.3);
-  box-shadow: 0px -72px 50px 94px rgba(0,0,0,0.3);
+  @include box-shadow(0px -72px 50px 94px rgba(0,0,0,0.3));
   height: 50px;
 }
 #close {
@@ -64,9 +68,7 @@
   background-color: #00e;
   width: 350px;
   height: calc(100vh - 50px);
-  -webkit-box-shadow: -134px 1px 85px 143px rgba(0,0,0,0.52);
-  -moz-box-shadow: -134px 1px 85px 143px rgba(0,0,0,0.52);
-  box-shadow: -134px 145px 85px 143px rgba(0,0,0,0.52);
+  @include box-shadow(-134px 145px 85px 143px rgba(0,0,0,0.52));
   overflow: hidden;
 }
 #welcome {
@@ -98,9 +100,7 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   overflow: hidden;
-  -webkit-box-shadow: 0px -22px 58px 23px rgba(0,0,0,0.54);
-  -moz-box-shadow: 0px -22px 58px 23px rgba(0,0,0,0.54);
-  box-shadow: 0px -22px 58px 23px rgba(0,0,0,0.54);
+  @include box-shadow(0px -22px 58px 23px rgba(0,0,0,0.54));
 }
 
 .datapoint {
@@ -129,18 +129,6 @@
   background-color: rgba(255,255,255,0);
   transition: background-color 0.2s;
   border-radius: 5px;
-}
-#invest {
-
-}
-#friends {
-
-}
-#firms {
-
-}
-#settings {
-
 }
 
 #home:hover, #invest:hover, #friends:hover, #firms:hover, #settings:hover {
@@ -190,9 +178,7 @@ svg {
   height: 600px;
   background-color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  -moz-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
+  @include box-shadow(0px 5px 55px 3px rgba(0,0,0,0.19));
   overflow: hidden;
 }
 
@@ -210,25 +196,14 @@ svg {
   margin-left: 20px;
   margin-top: 7.5px;
   margin-bottom: 7.5px;
-  width: 500px;
-  text-align: left;
-  height:30px;
-  line-height: 50px;
-  position: relative;
-  top: -10px;
-  z-index: 1;
 }
 
-.paper-investment > a, .lightbox > img, .paper-investment > img {
+.paper-investment > img {
   object-fit: cover;
   width: calc(100% - 25px);
   height: 300px;
-  -webkit-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.1);
-  -moz-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.1);
-  box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.1);
+  @include box-shadow(0px 5px 55px 3px rgba(0,0,0,0.1));
   border-radius: 5px;
-  z-index: 5;
-  position: relative;
 }
 
 .info {
@@ -334,9 +309,7 @@ body {
   top:50%;
   margin: calc(-600px/2) 0 0 calc(-1000px/2);
   overflow: hidden;
-  -webkit-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  -moz-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
+  @include box-shadow(0px 5px 55px 3px rgba(0,0,0,0.19));
 }
 .modaltitle {
   background-color: rgba(0,0,0,0.4);
@@ -367,9 +340,7 @@ body {
   border-radius: 7px;
   margin: 20px;
   padding: 7px;
-  -webkit-box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
-  -moz-box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
-  box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
+  @include box-shadow(0px 6px 21px 0px rgba(0,0,0,0.48));
 }
 .balmodal {
   font-size: 22.5px;
@@ -393,9 +364,7 @@ body {
   margin: 20px;
   width: 300px;
   height: 70px;
-  -webkit-box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
-  -moz-box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
-  box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
+  @include box-shadow(0px 6px 21px 0px rgba(0,0,0,0.48));
 }
 
 #modalinvestslider {
@@ -433,9 +402,7 @@ body {
   width: 314px;
   height: 70px;
   margin-top: 0px;
-  -webkit-box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
-  -moz-box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
-  box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
+  @include box-shadow(0px 6px 21px 0px rgba(0,0,0,0.48));
 }
 
 .modalright {
@@ -453,9 +420,7 @@ body {
   margin-right: 28px;
   border-radius: 5px;
   object-fit: cover;
-  -webkit-box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
-  -moz-box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
-  box-shadow: 0px 6px 21px 0px rgba(0,0,0,0.48);
+  @include box-shadow(0px 6px 21px 0px rgba(0,0,0,0.48));
   background-color: #fff;
 }
 
@@ -500,9 +465,7 @@ body {
   width: calc(100vw - 350px);
   height: 100px;
   background-color: #fff;
-  -webkit-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  -moz-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
+  @include box-shadow(0px 5px 55px 3px rgba(0,0,0,0.19));
   overflow: hidden;
   background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('./bank.jpg');
   background-size: cover;
@@ -530,9 +493,7 @@ body {
   height: 600px;
   background-color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  -moz-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
+  @include box-shadow(0px 5px 55px 3px rgba(0,0,0,0.19));
   overflow: hidden;
 }
 
@@ -558,21 +519,16 @@ body {
 }
 
 .memberwrapper {
-  overflow: scroll;
-  height: 517px;
-  overflow-x: hidden;
+  
 }
 
 .member {
-  width: 475px;
+  width: 485px;
   height: 80px;
   background-color: #fff;
-  -webkit-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  -moz-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
+  @include box-shadow(0px 5px 55px 3px rgba(0,0,0,0.19));
   border-radius: 5px;
   padding: 20px;
-  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -580,9 +536,7 @@ body {
   width: 485px;
   height: 44px;
   background-color: #fff;
-  -webkit-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  -moz-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
+  @include box-shadow(0px 5px 55px 3px rgba(0,0,0,0.19));
   border-radius: 5px;
   padding: 20px;
   margin-bottom: 20px;
@@ -641,9 +595,7 @@ body {
   float: left;
   text-align: left;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  -moz-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
+  @include box-shadow(0px 5px 55px 3px rgba(0,0,0,0.19));
 }
 
 .firmsettingiconwrap {
@@ -705,9 +657,7 @@ body {
 }
 #usersearchbar {
   color: #000;
-  -webkit-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  -moz-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
+  @include box-shadow(0px 5px 55px 3px rgba(0,0,0,0.19));
   border: 2px solid rgba(0,0,0,0.4);
   border-radius: 120px;
   width: 550px;
@@ -724,9 +674,7 @@ body {
 .pinnedprofile {
   width: 600px;
   height: 40px;
-  -webkit-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  -moz-box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
-  box-shadow: 0px 5px 55px 3px rgba(0,0,0,0.19);
+  @include box-shadow(0px 5px 55px 3px rgba(0,0,0,0.19));
   margin: 15px;
   border-radius: 5px;
 }
@@ -750,28 +698,4 @@ body {
   color: #000;
   font-size: 20px;
   text-align: left;
-}
-
-.lum-img {
-  z-index:999999 !important;
-  transform: scale(0.8) !important;
-  max-width: 100vw !important;
-  height: 100vh !important;
-}
-.lum-open {
-  z-index:999998 !important;
-  background-color: rgba(0,0,0,0.7) !important;
-}
-.investmentfinishedfailed {
-  color: #ff2424;
-}
-.vertcenter {
-  position:absolute; height:100%; width:100%;
-  display: table;
-}
-#textmodaltext {
-  display: table-cell;
-  vertical-align: middle;
-  text-align:center;
-  font-size: 48px;
 }
