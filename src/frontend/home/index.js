@@ -374,7 +374,7 @@ var toggleusermodal = () => {
 
 //websocket
 
-window.socket = new WebSocket('ws://localhost:81');
+window.socket = new WebSocket('ws://dankbank.io:81');
 global.page = 0;
 global.isoktocall = false;
 // Connection opened
