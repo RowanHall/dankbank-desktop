@@ -326,7 +326,7 @@ var showUser = (e) => {
         parsedinvestments.labels.push("")
       }
     })
-    formatChartUser(document.getElementsByClassName('modalleft')[1].children[2], parsedinvestments)
+    formatChartUser(document.getElementsByClassName('modalleft')[1].children[2], parsedinvestments, data.reddit.name)
     document.getElementsByClassName('balmodal')[1].innerText = data.memeec.balance.toLocaleString() + ".00 M¢"
     document.getElementsByClassName('balmodal')[2].innerText = data.firm.name
     var isInFirm = true

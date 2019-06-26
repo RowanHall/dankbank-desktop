@@ -1,6 +1,7 @@
 const openURL = require('open');
 var uuidv4 = require('uuid/v4')
 global.memory = {}
+global.usercharts = {};
 global.charts = {}
 window.formatChart = (chart, postID) => {
   getChartInfo(postID, (data) => {
@@ -56,7 +57,7 @@ window.formatChart = (chart, postID) => {
   })
 }
 
-window.formatChartUser = (chart, data) => {
+window.formatChartUser = (chart, data,name ) => {
   var ctx = chart.getContext("2d"); 
   var myChart = new ChartModern(ctx, {
     type: 'line',
@@ -96,6 +97,7 @@ window.formatChartUser = (chart, data) => {
       responsive: false
     }
   });
+  global.usercharts[name] = myChart
 }
 
 window.clearChartUser = (chart) => {
@@ -138,6 +140,10 @@ window.clearChartUser = (chart) => {
       responsive: false
     }
   });
+  Object.keys(global.usercharts).forEach((i) => {
+    global.usercharts[i].destroy();
+    delete global.usercharts[i]
+  })
 }
 
 
