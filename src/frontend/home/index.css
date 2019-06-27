@@ -684,6 +684,10 @@ body {
 }
 #leavefirm {
   background-color: #F44236;
+  color: #fff;
+}
+.leavefirmtext {
+  color: #fff;
 }
 .settingtitle {
   text-align: center;
