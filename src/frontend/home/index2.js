@@ -36,9 +36,7 @@ window.formatChart = (chart, postID) => {
         },
         scales: {
           xAxes: [{
-            ticks: {
-              display: false
-            }
+            display: false
           }],
           yAxes: [{
             ticks: {
@@ -89,9 +87,7 @@ window.formatChartUser = (chart, data,name ) => {
       },
       scales: {
         xAxes: [{
-          ticks: {
-            display: false
-          }
+          display: false
         }]
       },
       responsive: false
@@ -132,9 +128,7 @@ window.clearChartUser = (chart) => {
       },
       scales: {
         xAxes: [{
-          ticks: {
-            display: false
-          }
+          display: false
         }]
       },
       responsive: false
@@ -148,30 +142,38 @@ window.clearChartUser = (chart) => {
 
 
 var getChartInfo = (id, cb) => {
-  if(false) {
-  } else {
-    var uuid = uuidv4()
-    var x = ("responseTo:" + uuid)
-    window.socket.send(JSON.stringify({
-      type: "getUpvoteHistory",
-      data: {
-        "uuid": uuid,
-        "id": id
-      }
-    }))
-    window.myEmitter.on(x, (data, ws) => {
-      /*data.time = data.time.filter(function(value, index, Arr) {
-        return index % Math.ceil(data.time.length / 200) == 0;
-      });
-      data.values = data.values.filter(function(value, index, Arr) {
-        return index % Math.ceil(data.time.length / 200) == 0;
-      });*/
-      data.time = Array.from(data.time, (c) => {
-        var now = new Date(c)
-        return formatAMPM(now) + " " + monthNames[now.getMonth()] + " " + now.getDate()
-      })
-      
-      cb(data)
+  if(window.memory[id]) {
+    var data = window.memory[id]
+    data.time = Array.from(data.time, (c) => {
+      var now = new Date(c)
+      return formatAMPM(now) + " " + monthNames[now.getMonth()] + " " + now.getDate()
     })
+    
+    cb(data)
   }
+  var uuid = uuidv4()
+  var x = ("responseTo:" + uuid)
+  window.socket.send(JSON.stringify({
+    type: "getUpvoteHistory",
+    data: {
+      "uuid": uuid,
+      "id": id
+    }
+  }))
+  window.myEmitter.on(x, (data, ws) => {
+    window.memory[id] = data
+    /*data.time = data.time.filter(function(value, index, Arr) {
+      return index % Math.ceil(data.time.length / 200) == 0;
+    });
+    data.values = data.values.filter(function(value, index, Arr) {
+      return index % Math.ceil(data.time.length / 200) == 0;
+    });*/
+    data.time = Array.from(data.time, (c) => {
+      var now = new Date(c)
+      return formatAMPM(now).split(" ")[0] + ":" + String(now.getSeconds()).padStart(2, "0") + " " + formatAMPM(now).split(" ")[1] + " " + monthNames[now.getMonth()] + " " + now.getDate()
+    })
+    
+    cb(data)
+  })
+  
 }

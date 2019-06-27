@@ -460,7 +460,9 @@ myEmitter.on('batchSelfData', (data, ws) => {
     })
   } else {
     window.lastfirm =[]
-    document.getElementsByClassName('frimmain')[0].children[0].innerHTML = `<div class="paper-investment"><div class="paper-firm-piechart-title"><pre class="paper-frim-piechart-title-text">Members</pre><pre class="paper-frim-piechart-title-range">Sorted by balance</pre> </div><div class="memberwrapper"></div> </div><div class="paper-investment"><div class="paper-firm-piechart-title"><pre class="paper-frim-piechart-title-text">Firm Settings</pre></div><div class="firmsetting"><div class="firmsettingiconwrap"><img class="firmsettingicon" src="./nextpayout.svg"></div><div class="firmsettingtextwrap"><pre class="firmsettingtext">Next payout</pre><pre class="firmsettingval">M¢ ...</pre></div></div><div class="firmsetting"><div class="firmsettingiconwrap"><img class="firmsettingicon" src="./members.svg"></div><div class="firmsettingtextwrap"><pre class="firmsettingtext">Members</pre><pre class="firmsettingval">... members</pre></div></div><div class="firmsetting"><div class="firmsettingiconwrap"><img class="firmsettingicon" src="./tax.svg"></div><div class="firmsettingtextwrap"><pre class="firmsettingtext">Tax</pre><pre class="firmsettingval">...%</pre></div></div><div class="firmsetting"><div class="firmsettingiconwrap"><img class="firmsettingicon" src="./visibility.svg"></div><div class="firmsettingtextwrap"><pre class="firmsettingtext">Visibility</pre><pre class="firmsettingval">...</pre></div></div><div class="firmsetting"><div class="firmsettingiconwrap"><img class="firmsettingicon" src="./level.svg"></div><div class="firmsettingtextwrap"><pre class="firmsettingtext">Level</pre><pre class="firmsettingval">...</pre></div></div><div class="firmsetting" id="leavefirm" onclick="leavefirm()"><div class="firmsettingiconwrap"><img class="firmsettingicon" src="./leave.svg"></div><div class="firmsettingtextwrap"><pre class="firmsettingtext">Leave</pre><pre class="firmsettingval">Leave Firm</pre></div></div></div>`
+    if(document.getElementsByClassName('firmsettingval').length != 6) {
+      document.getElementsByClassName('frimmain')[0].children[0].innerHTML = `<div class="paper-investment"><div class="paper-firm-piechart-title"><pre class="paper-frim-piechart-title-text">Members</pre><pre class="paper-frim-piechart-title-range">Sorted by balance</pre> </div><div class="memberwrapper"></div> </div><div class="paper-investment"><div class="paper-firm-piechart-title"><pre class="paper-frim-piechart-title-text">Firm Settings</pre></div><div class="firmsetting"><div class="firmsettingiconwrap"><img class="firmsettingicon" src="./nextpayout.svg"></div><div class="firmsettingtextwrap"><pre class="firmsettingtext">Next payout</pre><pre class="firmsettingval">M¢ ...</pre></div></div><div class="firmsetting"><div class="firmsettingiconwrap"><img class="firmsettingicon" src="./members.svg"></div><div class="firmsettingtextwrap"><pre class="firmsettingtext">Members</pre><pre class="firmsettingval">... members</pre></div></div><div class="firmsetting"><div class="firmsettingiconwrap"><img class="firmsettingicon" src="./tax.svg"></div><div class="firmsettingtextwrap"><pre class="firmsettingtext">Tax</pre><pre class="firmsettingval">...%</pre></div></div><div class="firmsetting"><div class="firmsettingiconwrap"><img class="firmsettingicon" src="./visibility.svg"></div><div class="firmsettingtextwrap"><pre class="firmsettingtext">Visibility</pre><pre class="firmsettingval">...</pre></div></div><div class="firmsetting"><div class="firmsettingiconwrap"><img class="firmsettingicon" src="./level.svg"></div><div class="firmsettingtextwrap"><pre class="firmsettingtext">Level</pre><pre class="firmsettingval">...</pre></div></div><div class="firmsetting" id="leavefirm" onclick="leavefirm()"><div class="firmsettingiconwrap"><img class="firmsettingicon" src="./leave.svg"></div><div class="firmsettingtextwrap"><pre class="firmsettingtext">Leave</pre><pre class="firmsettingval">Leave Firm</pre></div></div></div>`
+    } else {}
     document.getElementsByClassName('paper-firminfo-firmname')[0].innerText = data.firm.name
     document.getElementsByClassName('paper-firminfo-firmcoin')[0].innerText = `F¢ ${data.firm.balance.toLocaleString()}.00`
     document.getElementsByClassName('firmsettingval')[0].innerText = "M¢ " + abbreviate(data.firm.balance, 2, false, false)
@@ -496,9 +498,9 @@ myEmitter.on('batchFirmUsers', (data, ws) => {
         <pre class="memberinfobal">M¢ ${usr.balance.toLocaleString()}.00</pre>
       </div>
       <div class="memberactionswrapper">
-        <img class="memberactionicon" src="./kickuser.svg"> 
-        <img class="memberactionicon" src="./demoteuser.svg">
-        <img class="memberactionicon" src="./promoteuser.svg">
+        <img class="memberactionicon" src="./kickuser.svg" onclick="kickuser(this.parentElement.parentElement.children[0].children[1].innerText)"> 
+        <img class="memberactionicon" src="./demoteuser.svg" onclick="demoteuser(this.parentElement.parentElement.children[0].children[1].innerText)">
+        <img class="memberactionicon" src="./promoteuser.svg" onclick="promoteuser(this.parentElement.parentElement.children[0].children[1].innerText)">
       </div>
     </div>`
     
@@ -513,6 +515,7 @@ myEmitter.on('batchFirmUsers', (data, ws) => {
 });
 
 myEmitter.on('batchInvestments', (data, ws) => {
+  document.getElementsByClassName('mainchild')[0].innerHTML = "";
   var lowestValue = 0;
   var highestValue = 0;
   data.reverse()
@@ -579,6 +582,53 @@ var joinfirm = (firmName) => {
   })
 }
 
+var kickuser = (firmName) => {
+  showLoadModal();
+  var uuid = uuidv4()
+  var x = ("responseTo:" + uuid)
+  window.socket.send(JSON.stringify({
+    type: "kickUser",
+    data: {
+      "uuid": uuid,
+      "id": firmName
+    }
+  }))
+  window.myEmitter.on(x, (data, ws) => {
+    hideLoadModal();
+  })
+}
+
+var promoteuser = (firmName) => {
+  showLoadModal();
+  var uuid = uuidv4()
+  var x = ("responseTo:" + uuid)
+  window.socket.send(JSON.stringify({
+    type: "promoteUser",
+    data: {
+      "uuid": uuid,
+      "id": firmName
+    }
+  }))
+  window.myEmitter.on(x, (data, ws) => {
+    hideLoadModal();
+  })
+}
+
+var demoteuser = (firmName) => {
+  showLoadModal();
+  var uuid = uuidv4()
+  var x = ("responseTo:" + uuid)
+  window.socket.send(JSON.stringify({
+    type: "demoteUser",
+    data: {
+      "uuid": uuid,
+      "id": firmName
+    }
+  }))
+  window.myEmitter.on(x, (data, ws) => {
+    hideLoadModal();
+  })
+}
 
 myEmitter.on('batchMemedata', (data, ws) => {
   window.investIn = window.investIn.concat(data)
@@ -643,9 +693,15 @@ document.getElementsByClassName("modalinvestbutton")[0].addEventListener('click'
   
 })
 
-myEmitter.on('update', (data) => {
+window.toUpdate = []
+window.rendering = false
+
+setInterval(() => {
+  if(window.rendering) {return}
+  window.rendering = true;
   Array.from(document.getElementsByClassName('mainchild')[1].children).forEach(item => {
-    data.forEach(updateObject => {
+    updateObject = window.toUpdate.shift()
+    if(updateObject) {
       if(window.selectedInvestment && updateObject.id == window.selectedInvestment.id) {
         if(updateObject.newComment) {
           window.selectedInvestment.num_comments = updateObject.newComment
@@ -706,8 +762,13 @@ myEmitter.on('update', (data) => {
           }
         }
       }
-    })
+    }
   })
+  window.rendering = false;
+}, 50)
+
+myEmitter.on('update', (data) => {
+  window.toUpdate = data
   global.isoktocall = true;
 })
 
@@ -773,7 +834,11 @@ renderInvested = async () => {
         })()}</h1>
         <img src='${(() => {
           if(investment.reddit) {
-            return investment.reddit.preview.images[0].source.url
+            try {
+              return investment.reddit.preview.images[0].source.url
+            } catch(err) {
+              return null
+            }
           } else {
             return ""
           }
@@ -834,7 +899,7 @@ renderInvested = async () => {
                   if(num > -1) {
                     c = "+"
                   }
-                  return c + Math.round(num)
+                  return c + (num).toFixed(2)
                 })()
               } else {
                 return "..."
@@ -848,7 +913,7 @@ renderInvested = async () => {
                   if(num > -1) {
                     c = "+"
                   }
-                  return c + num
+                  return c + Math.round(num)
                   
                 })()
               } else {
@@ -920,7 +985,7 @@ renderInvested = async () => {
                     if(num > -1) {
                       c = "+"
                     }
-                    return c + Math.round(num)
+                    return c + num.toFixed(2)
                   })()}% (${(() => {
                     //get bal relative
                     var c = ""

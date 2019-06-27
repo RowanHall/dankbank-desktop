@@ -2756,7 +2756,7 @@ helpers$1.extend(Element.prototype, {
 	pivot: function() {
 		var me = this;
 		if (!me._view) {
-			me._view = helpers$1.clone(me._model);
+			//me._view = helpers$1.clone(me._model);
 		}
 		me._start = {};
 		return me;
